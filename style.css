@@ -13,6 +13,9 @@ body{
 h3{
   color: #159;
 }
+.card{
+  background: #fff;
+}
 .back{
   margin-left: 10%;
 }
