@@ -2,7 +2,7 @@ const canvas = document.getElementById("result");
 const preview = document.getElementById("preview");
 preview.addEventListener("click", prev);
 
-canvas.height = canvas.width / 1.616;
+// canvas.height = canvas.width / 1.616;
 const ctx = canvas.getContext("2d");
 ctx.font = "20px Krasar"; //Helvetica
 
@@ -10,7 +10,7 @@ const image = document.getElementById("imgDisplayed");
 const logo = document.getElementById("logo");
 
 function prev(){
-
+      
       let inName = document.getElementById("inName").value;
       let inBirth = document.getElementById("inBirth").value;
       let inField = document.getElementById("inField").value;
@@ -22,25 +22,43 @@ function prev(){
       const fieldYear = document.getElementById("fieldYear");
       const num = document.getElementById("num");
 
-      name.innerHTML = inName;
-      birth.innerHTML = inBirth;
-      fieldYear.innerHTML = inField + "0" + inYear;
+      name.innerHTML = "ឈ្មោះ : " + inName;
+      birth.innerHTML = "អាសយដ្ឋាន : " + inBirth;
+      fieldYear.innerHTML = "ដំណាំ : " + inYear; //inField
       num.innerHTML = inNum;
 
-      ctx.fillStyle = "#159";
-      ctx.rect(0, 0, 300, 56);
-      ctx.fill();
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, 1280, 1280);
+
+      ctx.fillStyle = "#F0F3FA";
+      ctx.fillRect(0, 770, 1280, 150);
+      
+      ctx.fillStyle = "#242A3A";
+      ctx.fillRect(0, 0, 1280, 190);
+
+      
+
+
       ctx.fillStyle = "#fff";
-      ctx.fillText("ហាងស្រែមាស", 10, 25);
-      ctx.font = "16px Krasar"; //Arial
-      ctx.fillText("កាតអតិថិជន", 15, 45);
-      ctx.drawImage(logo, 230, 3, 50, 50);
+      ctx.font = '72px Krasar'; //Arial
+      ctx.fillText("កាតអតិថិជន", 70, 120);
+      
+      ctx.drawImage(logo, 1000, 30, 250, 130);
+
+
       ctx.fillStyle = "#000";
-      ctx.fillText(name.innerHTML, 110, 90);
-      ctx.fillText(birth.innerHTML, 110, 115);
-      ctx.fillText(fieldYear.innerHTML, 110, 140);
-      ctx.fillText("Tel: " + num.innerHTML, 110, 165);
-      ctx.drawImage(image, 10, 65, 80, 110);
+      ctx.font = '48px Krasar'; //Arial
+      ctx.fillText(name.innerHTML, 620, 300);
+      ctx.fillText("Tel: " + num.innerHTML, 620, 420);
+      ctx.fillText(birth.innerHTML, 70, 850);
+      ctx.fillText(fieldYear.innerHTML, 620, 620);
+      
+      
+      ctx.drawImage(image, 70, 230, 500, 500);
+      
+   
+
+      
 }
 
 function loadImage(event) {

@@ -12,16 +12,17 @@
   <div class="back">
     <form>
       <h3>Please fill-in the form</h3>
-      <label>Full Name</label>
+      <label>ឈ្មោះ</label>
       <input type="text" id="inName"   placeholder="Your name...">
-      <label>Date of birth</label>
-      <input type="date" id="inBirth"  placeholder="Date of birth...">
+      <label>លេខទូរស័ព្ទ</label>
+      <input type="number" id="inNum"  placeholder="Subscription number...">
+      <label>ទីកន្លែង</label>
+      <input type="text" id="inBirth"  placeholder="Date of birth...">
       <label>Field</label>
       <input type="text" id="inField"  placeholder="Field...">
-      <label>Year</label>
-      <input type="number" id="inYear" placeholder="Year...">
-      <label>Subscription number</label>
-      <input type="number" id="inNum"  placeholder="Subscription number...">
+      <label>ដំណាំ</label>
+      <input type="text" id="inYear" placeholder="Year...">
+      
       <label for="file" class="upload">Upload an Image</label>
       <br>
       <span>Choose one that desrcibes you perfectly</span>
@@ -31,18 +32,18 @@
 
 
     <div class="container">
-      <canvas id="result" class="card">
+      <canvas id="result" width="1280" height="900">
 
         <header id="head">
           <div class="camp">
             <h4>Campus Card</h4>
             <span>Undergraduate</span>
           </div>
-          <img src="./lorem.jpg" id="logo">
+          <img src="./Sremeas-Logo.png" id="logo" >
         </header>
 
         <div class="content">
-          <img src="" id="imgDisplayed">
+          <img src="" id="imgDisplayed" width="200" height="200">
           <ul>
             <li id="name"></li>
             <li id="birth"></li>
@@ -57,5 +58,7 @@
 
 
   <script src="main.js"></script>
+
+
 </body>
 </html>
