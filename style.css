@@ -18,7 +18,8 @@ h3{
 }
 .back{
   margin-left: 10%;
-}
+  }
+
 form{
   width: 40%;
   float: left;
@@ -39,6 +40,7 @@ input{
   border: 2px solid #159;
   border-radius: 5px;
   padding: 3px;
+  font-family: 'Krasar';
 }
 #file{
   opacity: 0;

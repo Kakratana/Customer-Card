@@ -31,15 +31,15 @@ function prev(){
       ctx.rect(0, 0, 300, 56);
       ctx.fill();
       ctx.fillStyle = "#fff";
-      ctx.fillText("កាតអតិថិជន", 10, 25);
+      ctx.fillText("ហាងស្រែមាស", 10, 25);
       ctx.font = "16px Krasar"; //Arial
-      ctx.fillText("ហាងស្រែមាស", 15, 45);
+      ctx.fillText("កាតអតិថិជន", 15, 45);
       ctx.drawImage(logo, 230, 3, 50, 50);
       ctx.fillStyle = "#000";
       ctx.fillText(name.innerHTML, 110, 90);
       ctx.fillText(birth.innerHTML, 110, 115);
       ctx.fillText(fieldYear.innerHTML, 110, 140);
-      ctx.fillText("SubN° " + num.innerHTML, 110, 165);
+      ctx.fillText("Tel: " + num.innerHTML, 110, 165);
       ctx.drawImage(image, 10, 65, 80, 110);
 }
 
