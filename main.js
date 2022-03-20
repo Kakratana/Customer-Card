@@ -20,11 +20,13 @@ function prev(){
       const name = document.getElementById("name");
       const birth = document.getElementById("birth");
       const fieldYear = document.getElementById("fieldYear");
+      const area = document.getElementById("area");
       const num = document.getElementById("num");
 
       name.innerHTML = "ឈ្មោះ : " + inName;
       birth.innerHTML = "អាសយដ្ឋាន : " + inBirth;
       fieldYear.innerHTML = "ដំណាំ : " + inYear; //inField
+      area.innerHTML = inField;
       num.innerHTML = inNum;
 
       ctx.fillStyle = "#FFFFFF";
@@ -33,7 +35,7 @@ function prev(){
       ctx.fillStyle = "#F0F3FA";
       ctx.fillRect(0, 770, 1280, 150);
       
-      ctx.fillStyle = "#242A3A";
+      ctx.fillStyle = "#1877F2";
       ctx.fillRect(0, 0, 1280, 190);
 
       
@@ -41,7 +43,7 @@ function prev(){
 
       ctx.fillStyle = "#fff";
       ctx.font = '72px Krasar'; //Arial
-      ctx.fillText("កាតអតិថិជន", 70, 120);
+      ctx.fillText("កាតអតិថិជន Customer Card", 70, 120);
       
       ctx.drawImage(logo, 1000, 30, 250, 130);
 
@@ -50,8 +52,9 @@ function prev(){
       ctx.font = '48px Krasar'; //Arial
       ctx.fillText(name.innerHTML, 620, 300);
       ctx.fillText("Tel: " + num.innerHTML, 620, 420);
+      ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 540);
+      ctx.fillText(fieldYear.innerHTML, 620, 660);
       ctx.fillText(birth.innerHTML, 70, 850);
-      ctx.fillText(fieldYear.innerHTML, 620, 620);
       
       
       ctx.drawImage(image, 70, 230, 500, 500);

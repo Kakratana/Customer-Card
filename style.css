@@ -10,6 +10,9 @@ body{
   font-weight: normal;
   font-style: normal;
 }
+label{
+  font-family: 'Krasar';
+}
 h3{
   color: #159;
 }
