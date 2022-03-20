@@ -55,9 +55,9 @@ function prev(){
       ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 540);
       ctx.fillText(fieldYear.innerHTML, 620, 660);
       ctx.fillText(birth.innerHTML, 70, 850);
-      
-      
+
       ctx.drawImage(image, 70, 230, 500, 500);
+
       
    
 
