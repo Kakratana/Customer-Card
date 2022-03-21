@@ -55,7 +55,7 @@ input{
 .upload, button{
   color: #fff;
   background: #159;
-  padding: 5px;
+  padding: 10px;
   border: 2px solid #159;
   border-radius: 5px;
   cursor: pointer;
