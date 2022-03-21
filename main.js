@@ -10,6 +10,31 @@ const image = document.getElementById("imgDisplayed");
 const logo = document.getElementById("logo");
 
 function prev(){
+
+      var sourceX;
+      var sourceY;
+      var sourceWidth;
+      var sourceHeight;
+      var destWidth = 500;
+      var destHeight = 500;
+      var destX = 70;
+      var destY = 230;
+
+      if (image.clientWidth >= image.clientHeight){
+
+        sourceX = image.clientWidth / 2 - image.clientWidth / 2;
+        sourceY = 0;
+        sourceWidth = 500;
+        sourceHeight = 500;
+        
+      
+      }else{
+      
+        sourceX = 0;
+        sourceY = image.clientHeight / 2 - image.clientHeight / 2;
+        sourceWidth = 50;
+        sourceHeight = 50;
+      }
       
       let inName = document.getElementById("inName").value;
       let inBirth = document.getElementById("inBirth").value;
@@ -42,21 +67,21 @@ function prev(){
 
 
       ctx.fillStyle = "#fff";
-      ctx.font = '72px Krasar'; //Arial
+      ctx.font = '60px Krasar'; //Arial
       ctx.fillText("កាតអតិថិជន Customer Card", 70, 120);
       
       ctx.drawImage(logo, 1000, 30, 250, 130);
 
 
       ctx.fillStyle = "#000";
-      ctx.font = '48px Krasar'; //Arial
+      ctx.font = '45px Krasar'; //Arial
       ctx.fillText(name.innerHTML, 620, 300);
-      ctx.fillText("Tel: " + num.innerHTML, 620, 420);
+      ctx.fillText("Tel : " + num.innerHTML, 620, 420);
       ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 540);
       ctx.fillText(fieldYear.innerHTML, 620, 660);
       ctx.fillText(birth.innerHTML, 70, 850);
 
-      ctx.drawImage(image, 70, 230, 500, 500);
+      ctx.drawImage(image, destX, destY, destWidth, destHeight); //sourceX, sourceY, sourceWidth, sourceHeight, 
 
       
    
