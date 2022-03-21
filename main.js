@@ -59,7 +59,7 @@ function prev(){
       num.innerHTML = inNum;
       
 
-      ctx.fillStyle = "#f3f8ff";
+      ctx.fillStyle = "#fcfdff";
       ctx.fillRect(0, 0, 1280, 1280);
 
       //Footer box
