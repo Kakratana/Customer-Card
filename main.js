@@ -15,10 +15,10 @@ function prev(){
       var sourceY;
       var sourceWidth;
       var sourceHeight;
-      var destWidth = 500;
-      var destHeight = 500;
-      var destX = 70;
-      var destY = 230;
+      var destWidth = 540;
+      var destHeight = 540;
+      var destX = 40;
+      var destY = 200;
 
       if (image.clientWidth >= image.clientHeight){
 
@@ -37,53 +37,76 @@ function prev(){
       }
       
       let inName = document.getElementById("inName").value;
-      let inBirth = document.getElementById("inBirth").value;
+      let inAddress = document.getElementById("inAddress").value;
       let inField = document.getElementById("inField").value;
       let inYear = document.getElementById("inYear").value;
       let inNum = document.getElementById("inNum").value;
+      let inNote = document.getElementById("inNote").value;
 
       const name = document.getElementById("name");
       const birth = document.getElementById("birth");
       const fieldYear = document.getElementById("fieldYear");
       const area = document.getElementById("area");
       const num = document.getElementById("num");
+      const note = document.getElementById("note");
+
 
       name.innerHTML = "ឈ្មោះ : " + inName;
-      birth.innerHTML = "អាសយដ្ឋាន : " + inBirth;
+      note.innerHTML = "សំគាល់ : " + inNote;
+      birth.innerHTML = "អាសយដ្ឋាន : " + inAddress;
       fieldYear.innerHTML = "ដំណាំ : " + inYear; //inField
       area.innerHTML = inField;
       num.innerHTML = inNum;
+      
 
-      ctx.fillStyle = "#FFFFFF";
+      ctx.fillStyle = "#f3f8ff";
       ctx.fillRect(0, 0, 1280, 1280);
 
-      ctx.fillStyle = "#F0F3FA";
-      ctx.fillRect(0, 770, 1280, 150);
-      
+      //Footer box
+      ctx.fillStyle = "#d0e4fd";
+      ctx.fillRect(0, 775, 1280, 150);
+
+      //Titile box      
       ctx.fillStyle = "#1877F2";
-      ctx.fillRect(0, 0, 1280, 190);
+      ctx.fillRect(0, 0, 1280, 170);
 
       
 
 
       ctx.fillStyle = "#fff";
       ctx.font = '60px Krasar'; //Arial
-      ctx.fillText("កាតអតិថិជន Customer Card", 70, 120);
+      ctx.fillText("កាតអតិថិជន Customer Card", 40, 110);
       
-      ctx.drawImage(logo, 1000, 30, 250, 130);
+      ctx.drawImage(logo, 1000, 20, 250, 130);
 
 
       ctx.fillStyle = "#000";
       ctx.font = '45px Krasar'; //Arial
-      ctx.fillText(name.innerHTML, 620, 300);
-      ctx.fillText("Tel : " + num.innerHTML, 620, 420);
-      ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 540);
-      ctx.fillText(fieldYear.innerHTML, 620, 660);
-      ctx.fillText(birth.innerHTML, 70, 850);
+      ctx.fillText(name.innerHTML, 620, 250);
+      ctx.fillText("Tel : " + num.innerHTML, 620, 370);
+      ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 490);
+      ctx.fillText(fieldYear.innerHTML, 620, 610);
+      ctx.fillText(note.innerHTML, 620, 730);
 
+      ctx.fillText(birth.innerHTML, 40, 850);
+
+      roundedImage(destX, destY, destWidth, destHeight, 20);
+      ctx.clip();
       ctx.drawImage(image, destX, destY, destWidth, destHeight); //sourceX, sourceY, sourceWidth, sourceHeight, 
 
-      
+      function roundedImage(x, y, width, height, radius) {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+    }
    
 
       

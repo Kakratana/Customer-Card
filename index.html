@@ -13,19 +13,22 @@
     <form>
       <h3>Please fill-in the form</h3>
       <label>ឈ្មោះ</label>
-      <input type="text" id="inName"   placeholder="Your name...">
+      <input type="text" id="inName"   placeholder="ឈ្មោះអតិថិជន...">
       <label>លេខទូរស័ព្ទ</label>
-      <input type="number" id="inNum"  placeholder="Subscription number...">
-      <label>ទីកន្លែង</label>
-      <input type="text" id="inBirth"  placeholder="Date of birth...">
+      <input type="text" id="inNum"  placeholder="លេខទូរស័ព្ទ...">
+      <label>អាសយដ្ឋាន</label>
+      <input type="text" id="inAddress"  placeholder="អាសយដ្ឋាន...">
       <label>ផ្ទៃដី</label>
-      <input type="text" id="inField"  placeholder="Field...">
+      <input type="text" id="inField"  placeholder="ផ្ទៃដីដាំដុះ...">
       <label>ដំណាំ</label>
-      <input type="text" id="inYear" placeholder="Year...">
-      
+      <input type="text" id="inYear" placeholder="ប្រភេទដំណាំ...">
+      <label>កត់សំគាល់</label>
+      <input type="text" id="inNote" placeholder="កត់សំគាល់...">
+    
       <label for="file" class="upload">Upload an Image</label>
       <br>
-      <span>Choose one that desrcibes you perfectly</span>
+      <br>
+      <label>រូបដែល Upload ចូលត្រូវមានរាងជាការេ</label>
       <input type="file" id="file" accept="image/*" onchange="loadImage(event)">
     </form>
       <button type="submit" id="preview">Preview</button>
@@ -50,6 +53,7 @@
             <li id="area"></li>
             <li id="fieldYear"></li>
             <li>លេខទូរស័ព្ទ:<span id="num"></span></li>
+            <li id="note"></li>
           </ul>
         </div>
 
