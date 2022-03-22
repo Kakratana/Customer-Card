@@ -15,25 +15,36 @@ function prev(){
       var sourceY;
       var sourceWidth;
       var sourceHeight;
-      var destWidth = 540;
+      var destWidth = 400;
       var destHeight = 540;
       var destX = 40;
       var destY = 200;
 
-      if (image.clientWidth >= image.clientHeight){
+      var myImg = document.querySelector("#imgDisplayed");
+      var realWidth = myImg.naturalWidth;
+      var realHeight = myImg.naturalHeight;
 
-        sourceX = image.clientWidth / 2 - image.clientWidth / 2;
-        sourceY = 0;
-        sourceWidth = 500;
-        sourceHeight = 500;
-        
       
+      var scalWidth = (540 * realWidth) / realHeight;
+      var scalHeight = (540 * realHeight) / realWidth;
+    
+      if (realWidth > realHeight){
+        sourceX = Math.abs(scalWidth / 2 - scalHeight / 2 ) * -1 ;
+        sourceY = 200;
+        sourceWidth = scalWidth;
+        sourceHeight = 540;
+
+      }else if (realWidth < realHeight){
+        sourceX = 40;
+        sourceY =  200;
+        sourceWidth = 540;
+        sourceHeight = scalHeight;
+
       }else{
-      
-        sourceX = 0;
-        sourceY = image.clientHeight / 2 - image.clientHeight / 2;
-        sourceWidth = 50;
-        sourceHeight = 50;
+        sourceX = 40;
+        sourceY =  200;
+        sourceWidth = 540;
+        sourceHeight = 540;
       }
       
       let inName = document.getElementById("inName").value;
@@ -84,15 +95,17 @@ function prev(){
       ctx.font = '45px Krasar'; //Arial
       ctx.fillText(name.innerHTML, 620, 250);
       ctx.fillText("Tel : " + num.innerHTML, 620, 370);
-      ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 490);
       ctx.fillText(fieldYear.innerHTML, 620, 610);
+      ctx.fillText("ផ្ទៃដី : " + area.innerHTML, 620, 490);
       ctx.fillText(note.innerHTML, 620, 730);
 
       ctx.fillText(birth.innerHTML, 40, 850);
 
-      roundedImage(destX, destY, destWidth, destHeight, 20);
+      roundedImage(destX, destY, 540, 540, 20);
       ctx.clip();
-      ctx.drawImage(image, destX, destY, destWidth, destHeight); //sourceX, sourceY, sourceWidth, sourceHeight, 
+      ctx.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight  ); //sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight
+
+
 
       function roundedImage(x, y, width, height, radius) {
         ctx.beginPath();
@@ -116,6 +129,7 @@ function loadImage(event) {
   const image = document.getElementById("imgDisplayed");
   image.src = URL.createObjectURL(event.target.files[0]);
 }
+
 
 const download = document.getElementById("down");
 download.addEventListener("click", function(){
