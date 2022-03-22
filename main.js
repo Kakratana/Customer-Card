@@ -23,20 +23,19 @@ function prev(){
       var myImg = document.querySelector("#imgDisplayed");
       var realWidth = myImg.naturalWidth;
       var realHeight = myImg.naturalHeight;
-
       
       var scalWidth = (540 * realWidth) / realHeight;
       var scalHeight = (540 * realHeight) / realWidth;
     
       if (realWidth > realHeight){
-        sourceX = Math.abs(scalWidth / 2 - scalHeight / 2 ) * -1 ;
+        sourceX = Math.abs(((scalWidth / 2) - (540 / 2)) - 40) * -1 ;
         sourceY = 200;
         sourceWidth = scalWidth;
         sourceHeight = 540;
 
       }else if (realWidth < realHeight){
         sourceX = 40;
-        sourceY =  200;
+        sourceY =  Math.abs(((scalHeight / 2) - (540 / 2)) - 200) * -1 ;
         sourceWidth = 540;
         sourceHeight = scalHeight;
 
